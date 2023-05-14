@@ -12,7 +12,7 @@
     "lint": "npm run eslint && npm run prettier",
     "prettier:fix": "prettier --write --list-different .",
     "lint:fix": "npm run prettier:fix && npm run eslint --fix",
-    "test": "vitest run",
+    "test": "vitest --run --passWithNoTests",
     "prepare": "husky install"
   },
   "devDependencies": {
