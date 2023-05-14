@@ -2,11 +2,14 @@ import packageJSON from "./package.json";
 
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  css: [
-    "@/assets/css/elements/links.css",
-    "@/assets/css/objects/theme-provider.css",
-  ],
-  modules: ["@nuxtjs/eslint-module", "@nuxtjs/tailwindcss", "@nuxtjs/i18n"],
+  extends: ["./layers/base", "./layers/home", "./layers/generator"],
+  modules: ["@nuxtjs/eslint-module", "@nuxtjs/i18n"],
+  i18n: {
+    lazy: true,
+    strategy: "no_prefix",
+    langDir: "./locales",
+    locales: [{ code: "en", file: "en-US.json" }],
+  },
   runtimeConfig: {
     public: {
       githubRepositoryUrl: packageJSON.repository.url,

@@ -5,9 +5,19 @@
   --color-accent: #479ad1;
 }
 
+.theme-provider_inverted {
+  --color-ink: #ffffff;
+  --color-canvas: #1d1f20;
+}
+
 @media (prefers-color-scheme: dark) {
   .theme-provider_default.theme-provider_adaptive {
     --color-ink: #ffffff;
     --color-canvas: #1d1f20;
+  }
+
+  .theme-provider_inverted.theme-provider_adaptive {
+    --color-ink: #1d1f20;
+    --color-canvas: #ffffff;
   }
 }

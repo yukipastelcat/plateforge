@@ -23,7 +23,7 @@
     <footer
       class="container px-4 mx-auto py-4 flex items-center border-t border-frame"
     >
-      <p>{{ t("copyright", { copyrightYears }) }}</p>
+      <p>{{ $t("footer.copyright", { copyrightYears }) }}</p>
       <NuxtLink
         :to="githubRepositoryUrl"
         target="_blank"
@@ -36,14 +36,12 @@
 </template>
 
 <script setup>
-import { useI18n } from "vue-i18n";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
 // eslint-disable-next-line import/named
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
-import AppLogo from "@/components/AppLogo.vue";
+import AppLogo from "../components/AppLogo.vue";
 
 const { githubRepositoryUrl } = useRuntimeConfig().public;
-const { t } = useI18n();
 
 const copyrightYears = computed(() => {
   const startYear = 2023;
@@ -54,11 +52,3 @@ const copyrightYears = computed(() => {
   return currentYear;
 });
 </script>
-
-<i18n lang="json">
-{
-  "en": {
-    "copyright": "© {copyrightYears} Plateforge - MIT License"
-  }
-}
-</i18n>
