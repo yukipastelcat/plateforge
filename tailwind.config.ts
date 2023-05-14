@@ -4,10 +4,10 @@ export default <Partial<Config>>{
   theme: {
     extend: {
       colors: {
-        parentBg: "var(--color-parentBg)",
+        ink: "var(--color-ink)",
+        canvas: "var(--color-canvas)",
+        frame: "var(--color-frame)",
         accent: "var(--color-accent)",
-        background: "var(--color-background)",
-        border: "var(--color-border)",
       },
     },
   },

@@ -1,6 +1,13 @@
 .theme-provider {
-  --color-parentBg: #f7f7f8;
-  --color-accent: #4e5255;
-  --color-background: #ffffff;
-  --color-border: #f1f3f8;
+  --color-ink: #4e5255;
+  --color-canvas: #ffffff;
+  --color-frame: var(--color-ink);
+  --color-accent: #479ad1;
+}
+
+@media (prefers-color-scheme: dark) {
+  .theme-provider_default.theme-provider_adaptive {
+    --color-ink: #ffffff;
+    --color-canvas: #1d1f20;
+  }
 }
