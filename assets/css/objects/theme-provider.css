@@ -1,0 +1,13 @@
+.theme-provider {
+  --color-ink: #4e5255;
+  --color-canvas: #ffffff;
+  --color-frame: #d5d7d8;
+  --color-accent: #479ad1;
+}
+
+@media (prefers-color-scheme: dark) {
+  .theme-provider_default.theme-provider_adaptive {
+    --color-ink: #ffffff;
+    --color-canvas: #1d1f20;
+  }
+}
