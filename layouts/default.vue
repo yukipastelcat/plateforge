@@ -1,17 +1,23 @@
 <template>
-  <div class="bg-canvas text-ink">
+  <div class="bg-canvas text-ink flex flex-col min-h-screen">
     <header class="sticky top-0 bg-canvas border-b border-frame z-10">
       <div class="container px-4 mx-auto flex items-center h-14">
-        <Logo />
+        <NuxtLink
+          class="block h-full text-inherit hover:no-underline hover:text-accent"
+          to="/"
+        >
+          <AppLogo width="7rem" />
+        </NuxtLink>
         <NuxtLink
           :to="githubRepositoryUrl"
-          class="ms-auto text-inherit hover:no-underline"
+          target="_blank"
+          class="ms-auto text-inherit hover:no-underline hover:text-accent"
         >
           <FontAwesomeIcon :icon="faGithub" />
         </NuxtLink>
       </div>
     </header>
-    <main class="container px-4 mx-auto my-4 md:my-6">
+    <main class="container px-4 mx-auto my-4 md:my-6 grow">
       <slot />
     </main>
     <footer
@@ -20,7 +26,8 @@
       <p>{{ t("copyright", { copyrightYears }) }}</p>
       <NuxtLink
         :to="githubRepositoryUrl"
-        class="ms-auto text-inherit hover:no-underline"
+        target="_blank"
+        class="ms-auto text-inherit hover:no-underline hover:text-accent"
       >
         <FontAwesomeIcon :icon="faGithub" />
       </NuxtLink>
@@ -31,10 +38,11 @@
 <script setup>
 import { useI18n } from "vue-i18n";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
+// eslint-disable-next-line import/named
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
-import Logo from "@/components/Logo.vue";
+import AppLogo from "@/components/AppLogo.vue";
 
-const { githubRepositoryUrl } = useRuntimeConfig();
+const { githubRepositoryUrl } = useRuntimeConfig().public;
 const { t } = useI18n();
 
 const copyrightYears = computed(() => {

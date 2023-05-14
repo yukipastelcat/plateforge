@@ -1,7 +1,7 @@
 <template>
   <div class="theme-provider theme-provider_default theme-provider_adaptive">
     <NuxtLayout>
-      <NuxtWelcome />
+      <NuxtPage />
     </NuxtLayout>
   </div>
 </template>
